@@ -1,7 +1,7 @@
 ---
 title: Finish the Game of Life!
 slug: game-of-life-code
----       
+---
 
 Time to code! In this step we are going to hook up the UI we've created
 in SpriteBuilder with the game logic we're going to code in Xcode.
@@ -13,7 +13,7 @@ First of all let's create the *Grid* class which we just set as a custom
 class in SpriteBuilder. Create a new Swift class in Xcode and make
 it a subclass of *CCSprite*.  Go to File > New > File > iOS > Source > Cocoa Touch Class.
 
-![image](https://s3.amazonaws.com/mgwu-misc/GameOfLife+SpriteBuilder+Swift/GOL-Grid-CCSprite-Swift.png)
+![image](./GOL-Grid-CCSprite-Swift.png)
 
 Create a Creature class
 =======================
@@ -24,14 +24,14 @@ create a class called *Creature* that also inherits from *CCSprite*.
 
 When you've created the class, open *Creature.swift* and and replace the
 content of the file with this:
-    
+
     class Creature: CCSprite {
-  
-    	var isAlive: Bool = false   
+
+    	var isAlive: Bool = false
     	var livingNeighborsCount = 0
-  
+
     	convenience override init() {
-      		
+
     	}
     }
 
@@ -44,7 +44,7 @@ Modify *Creature.swift* by adding the following two lines to init:
 
     convenience override init() {
     	self.init(imageNamed: "GameOfLifeAssets/Assets/bubble.png")
-    	anchorPoint = CGPoint(x: 0, y: 0)	
+    	anchorPoint = CGPoint(x: 0, y: 0)
     }
 
 This initializer simply sets the image of the creature to *bubble.png*.  Initializers in Swift must initialize all stored property values.  Our initializer doesn't do that - instead it calls a second initializer *self.init(imageNamed:)* that does.  We inform the compiler that we'll be calling a second initializer from within our initializer by placing the *convenience* keyword in front of our init declaration.
@@ -75,14 +75,14 @@ Replace the code in *Grid.swift* with the following:
 	let GridColumns = 10
 
 	class Grid: CCSprite {
-  
+
 		var totalAlive = 0
 		var generation = 0
-	  
+
 		private var cellWidth: CGFloat = 0
 		private var cellHeight: CGFloat = 0
 		private var gridArray: [[Creature]]!
-		
+
 		// Add Grid methods below here
 	}
 
@@ -100,9 +100,9 @@ call the *setupGrid* method we are going to write next:
 
 	override func onEnter() {
 		super.onEnter()
-    
+
 		setupGrid()
-    
+
 		userInteractionEnabled = true
 	}
 
@@ -111,25 +111,25 @@ on the grid. Later in this tutorial we will handle incoming touch
 events. Now let's implement *setupGrid* method after *onEnter*:
 
 	private func setupGrid() {
-	
+
 		cellWidth = contentSize.width / CGFloat(GridColumns)
 		cellHeight = contentSize.height / CGFloat(GridRows)
-    
+
     	gridArray = []
-    
+
     	for row in 0..<GridRows {
-      
+
 			gridArray.append([])
-	      
+
 			for column in 0..<GridColumns {
 				var creature = Creature()
 	        	creature.position = CGPoint(x: cellWidth * CGFloat(column),
 	                                   	 y: cellHeight * CGFloat(row))
 	        	addChild(creature)
-	        
+
 	        	gridArray[row].append(creature)
-	        	
-	        	// make creatures visible to test this method, 
+
+	        	// make creatures visible to test this method,
 	        	// set to false once we know we have filled the grid properly
     			creature.isAlive = true;
 			}
@@ -144,11 +144,11 @@ so we can be sure this method works.
 
 After you've added this method run the game. It should look like this:
 
-![image](https://s3.amazonaws.com/mgwu-misc/GameOfLife+SpriteBuilder+Tutorial/GOF-GridComplete.png)
+![image](./GOF-GridComplete.png)
 
 Once you have confirmed that everything works out set creature.isAlive to false:
 
-	// make creatures visible to test this method, 
+	// make creatures visible to test this method,
 	// set to false once we know we have filled the grid properly
 	creature.isAlive = false;
 
@@ -164,9 +164,9 @@ following method to your Grid.swift:
 
 	override func touchBegan(touch: CCTouch!, withEvent event: CCTouchEvent!) {
 		var touchLocation = touch.locationInNode(self)
-	    
+
 		var creature = creatureForTouchPosition(touchLocation)
-	    
+
 		creature.isAlive = !creature.isAlive
 	}
 
@@ -218,27 +218,27 @@ Replace the content of *MainScene.swift* with these lines:
 	import Foundation
 
 	class MainScene: CCNode {
-	  
+
 		var grid: Grid!
 		var generationLabel: CCLabelTTF!
 		var populationLabel: CCLabelTTF!
 		var timer = CCTimer()
-		  
+
 		func play() {
 			schedule("step", interval: CCTime(0.5))
 		}
-		  
+
 		func pause() {
 			unschedule("step")
 		}
-		  
+
 		func step() {
 			grid.evolveStep()
-		    
+
 			generationLabel.string = "\(grid.generation)"
 			populationLabel.string = "\(grid.totalAlive)"
 		}
-	  
+
 	}
 
 Since we hooked up the play and pause buttons to the play and pause
@@ -266,10 +266,10 @@ Fill your *evolveStep* method with the following code:
 
     //update each Creature's neighbor count
     countNeighbors()
-    
+
     //update each Creature's state
     updateCreatures()
-    
+
     //update the generation so the label's text will display the correct generation
     generation++
 
@@ -280,19 +280,19 @@ Declare *countNeighbors* in your Grid.swift. It takes no parameters and has no r
 
 	for row in 0..<gridArray.count {
 		for column in 0..<gridArray[row].count {
-	   
+
 			var currentCreature = gridArray[row][column]
 			currentCreature.livingNeighborsCount = 0
-	   
+
 			for x in (row - 1)...(row + 1) {
 				for y in (column - 1)...(column + 1) {
-	       
+
 					var validIndex = isValidIndex(x: x, y: y)
-	       
+
 					if validIndex && !(x == row && y == column) {
-					
+
 						var neighbor = gridArray[x][y]
-						
+
 						if neighbor.isAlive {
 							currentCreature.livingNeighborsCount++
 						}
