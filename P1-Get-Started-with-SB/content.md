@@ -9,7 +9,7 @@ Installation
 We are going to use a tool called SpriteBuilder to make this game. When
 we are done, the game will look like this:
 
-![image](https://s3.amazonaws.com/mgwu-misc/GameOfLife+SpriteBuilder+Tutorial/GOF-GridComplete.png)
+![image](./GOF-GridComplete.png)
 
 Go to [the Mac App
 Store](https://itunes.apple.com/us/app/spritebuilder/id784912885?mt=12)
@@ -70,6 +70,6 @@ Cocos2d Scenes and Nodes (the basic classes in Cocos2D) out of them.
 Here's a short visualization of how SpriteBuilder and Xcode projects
 work together:
 
-![image](https://s3.amazonaws.com/mgwu-misc/Spritebuilder+Tutorial/spritebuilder_publishing.png)
+![image](./spritebuilder_publishing.png)
 
 Read on to learn how to create your first project!
