@@ -1,14 +1,14 @@
 ---
 title: SpriteBuilder's User Interface
 slug: spritebuilder-user-interface
----       
+---
 
 Let's take a tour of SpriteBuilder's User Interface before we finally
 delve into creating our game.
 
 The interface is divided into 4 main sections:
 
-![image](https://s3.amazonaws.com/mgwu-misc/Spritebuilder+Tutorial/SBUI.png)
+![image](./SBUI.png)
 
 1.  *Resource/Component Browser*: Here you can see the different
     resources and scenes you have created or added to your project. You
@@ -32,7 +32,7 @@ The first tab in the resource/component browser (labelled as section 1
 in the image above) represents the *File View*. It lists all the .ccb
 files and resources you have added:
 
-![image](https://s3.amazonaws.com/mgwu-misc/Spritebuilder+Tutorial/Spritebuilder_FileView.png)
+![image](./Spritebuilder_FileView.png)
 
 In this view you can add new resources and restructure your project's
 folder hierarchy.
@@ -42,7 +42,7 @@ Node Library
 
 The third tab is the *Node Library*:
 
-![image](https://s3.amazonaws.com/mgwu-misc/Spritebuilder+Tutorial/Spritebuilder_NodeView.png)
+![image](./Spritebuilder_NodeView.png)
 
 This panel shows you all available node types you can use to construct
 your gameplay scenes and menus.
@@ -55,7 +55,7 @@ image) is the Inspector. Once you have selected an object on your stage
 you can use this panel to modify many of its properties, like position
 and color:
 
-![image](https://s3.amazonaws.com/mgwu-misc/Spritebuilder+Tutorial/Spritebuilder_Inspector.png)
+![image](./Spritebuilder_Inspector.png)
 
 Code Connections
 ================
@@ -64,7 +64,7 @@ The second tab on the right panel let's you manage code connections for
 your selected node. One of the things you can do here is set custom
 Objective-C classes for your nodes:
 
-![image](https://s3.amazonaws.com/mgwu-misc/Spritebuilder+Tutorial/Spritebuilder_CodeConnections.png)
+![image](./Spritebuilder_CodeConnections.png)
 
 Publishing to Xcode
 ===================
@@ -75,7 +75,7 @@ Spritebuilder project to your Xcode project. Whenever you changed your
 SpriteBuilder project and want to run it, you should hit this button
 before building the Xcode project:
 
-![image](https://s3.amazonaws.com/mgwu-misc/Spritebuilder+Tutorial/Spritebuilder_Publish.png)
+![image](./Spritebuilder_Publish.png)
 
 **Now you're ready to add content to your very first SpriteBuilder
 game!**
