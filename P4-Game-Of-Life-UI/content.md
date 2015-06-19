@@ -95,8 +95,7 @@ Add a container node for the left panel
 As you can see on the screenshot at the beginning of this tutorial we
 will have a couple of UI elements on the left side of the screen. We
 want all of them to be centered. To achieve this we are going to use a
-little layout trick and a *CCNode* that will not be visible but only be
-used to center other nodes inside of it.
+little layout trick where we use an invisible *CCNode* and position other nodes inside of it.
 
 Add a *CCNode* to your scene by choosing a Node from the Node Library View. Set the width to be defined in *Width
 insets in point*. This means the Node will have the size of the parent
@@ -119,7 +118,7 @@ panel and they all need to be placed one below the other. Instead of
 doing this manually we can use a nice Cocos2d component called
 *CCLayoutBox*.
 
-Drag a Node called *Box Layout* to your scene - make sure you add it as
+Drag a *Box Layout* from the Node library to your scene - make sure you add it as
 a child of the left container node we just created. Set the anchor point
 to (0.5, 0.5) and x and y to 50% of the parent container - this will
 center the *Box Layout* in the left Node. Also set the *layout
@@ -155,7 +154,7 @@ and the *Highlighted State* (play-pressed.png and pause-pressed.png):
 In the next step add four labels as children of the balloon, these will
 form our scoreboard. To do so, go back to the Node Library, find the
 Node type called *Label TTF*, and drag four of them onto the balloon in
-your timeline. Adjust the labels to match the screenshot:
+your timeline. Adjust the labels to match the screenshot (hint - this is a great chance to practice using *Box Layout* again!) :
 
 ![image](./GOF_Labels.png)
 
@@ -169,7 +168,7 @@ Set up code connections
 =======================
 
 Let's start with the labels - we need code connections in order to
-update the label values as the game state changes. Select the top label,
+update the label values as the game state changes. Select the second label,
 go to the Code Connections view (second button on the top of the right
 panel), and create a code connection called *populationLabel* - be
 sure to choose *Doc root var* from the dropdown box and leave the
@@ -177,7 +176,7 @@ sure to choose *Doc root var* from the dropdown box and leave the
 
 ![image](./GOF-Label_Code_Connection.png)
 
-Now do the same thing for the second label, but call the connection
+Now do the same thing for the bottom label, but call the connection
 *generationLabel*.
 
 We also want to create a connection for our grid. Select the grid on the
@@ -200,9 +199,4 @@ root node:
 
 ![image](./GOF-CustomClassGrid.png)
 
-Now save, publish (File\>Publish) and open your Xcode project!
-
-Your Xcode project is contained inside of your SpriteBuilder project in
-Finder. If you don't remember where you saved it, search for your
-project name in Spotlight (magnifying glass at the top right of your
-Mac's screen)
+Now save, publish (File > Publish) and open your Xcode project by going to File > Open Project in Xcode.

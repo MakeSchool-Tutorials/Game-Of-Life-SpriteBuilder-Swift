@@ -27,7 +27,7 @@ content of the file with this:
 
     class Creature: CCSprite {
 
-    	var isAlive: Bool = false
+    	var isAlive = false   
     	var livingNeighborsCount = 0
 
     	convenience override init() {
@@ -54,7 +54,7 @@ alive, we will make it invisible. The easiest way to connect the
 visibility state to the alive state is to create a callback that is called
 when the *isAlive* property gets changed.  Modify the *isAlive* property declaration to look like this:
 
-	var isAlive: Bool = false {
+	var isAlive = false {
 		didSet {
 			self.visible = isAlive
     	}
@@ -219,9 +219,10 @@ Replace the content of *MainScene.swift* with these lines:
 
 	class MainScene: CCNode {
 
-		var grid: Grid!
-		var generationLabel: CCLabelTTF!
-		var populationLabel: CCLabelTTF!
+		weak var grid: Grid!
+		weak var generationLabel: CCLabelTTF!
+		weak var populationLabel: CCLabelTTF!
+
 		var timer = CCTimer()
 
 		func play() {
