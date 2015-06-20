@@ -9,8 +9,7 @@ UI of the game will look like this:
 
 ![image](./GOF_SpriteBuilder_UI.png)
 
-Getting started
-===============
+#Getting started
 
 Get started by downloading our [art
 pack](https://s3.amazonaws.com/mgwu-misc/GameOfLife+SpriteBuilder+Tutorial/GameOfLifeAssets.zip)
@@ -31,8 +30,7 @@ Now open *MainScene.ccb* and highlight CCNodeGradient in the timeline.
 Hit the delete key. Do the same for CCLabelTTF - you should end up with
 a black screen. Note that you cannot delete the root CCNode.
 
-Add a background image
-======================
+#Add a background image
 
 Drag *background.png* to the stage of *MainScene.ccb*. We want to center
 the background so set the anchor point to (0.5, 0.5) and choose the
@@ -50,8 +48,7 @@ to switch between *Phone Landscape* and *Phone Landscape (short)*:
 
 Your background image should stay centered in both resolution modes.
 
-Creating a grid
-===============
+#Creating a grid
 
 We will create the grid in a separate CCB-File because it will be linked
 to a custom class later on. Create a new CCB-File (File\>New\>File) of
@@ -71,8 +68,7 @@ from the right edge of the screen.
 **Make sure to save (cmd+s) or your grid will not display correctly
 later on!**
 
-Add the grid to the MainScene
-=============================
+#Add the grid to the MainScene
 
 Now open *MainScene.ccb* again by double clicking on it and drag
 *Grid.ccb* onto the stage. This will add the grid as Sub-CCB-File to the
@@ -89,8 +85,7 @@ This means the grid will be positioned 10 points from the right edge and
 it will be vertically centered. You can again test by switching between
 the different resolutions.
 
-Add a container node for the left panel
-=======================================
+#Add a container node for the left panel
 
 As you can see on the screenshot at the beginning of this tutorial we
 will have a couple of UI elements on the left side of the screen. We
@@ -110,8 +105,7 @@ same as shown in the screenshot. When you test with different
 resolutions you should see how the left node resizes, always taking all
 the space that is not used by the grid.
 
-Layout Box & Buttons
-====================
+#Layout Box & Buttons
 
 We have a couple different elements that we need to add to the left
 panel and they all need to be placed one below the other. Instead of
@@ -164,8 +158,7 @@ Xcode and you start implementing the actual game. We want to tell
 SpriteBuilder how this UI you've created will interact with the classes
 and methods we will implement in code.
 
-Set up code connections
-=======================
+#Set up code connections
 
 Let's start with the labels - we need code connections in order to
 update the label values as the game state changes. Select the second label,

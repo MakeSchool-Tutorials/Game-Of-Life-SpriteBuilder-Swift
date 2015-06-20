@@ -6,8 +6,7 @@ slug: game-of-life-code
 Time to code! In this step we are going to hook up the UI we've created
 in SpriteBuilder with the game logic we're going to code in Xcode.
 
-Create a Grid class
-===================
+#Create a Grid class
 
 First of all let's create the *Grid* class which we just set as a custom
 class in SpriteBuilder. Create a new Swift class in Xcode and make
@@ -15,8 +14,7 @@ it a subclass of *CCSprite*.  Go to File > New > File > iOS > Source > Cocoa Tou
 
 ![image](./GOL-Grid-CCSprite-Swift.png)
 
-Create a Creature class
-=======================
+#Create a Creature class
 
 We will use some object orientation to implement this game - therefore
 Creatures will get their own class, too. Repeat the step above and
@@ -27,7 +25,7 @@ content of the file with this:
 
     class Creature: CCSprite {
 
-    	var isAlive = false   
+    	var isAlive = false
     	var livingNeighborsCount = 0
 
     	convenience override init() {
@@ -63,8 +61,7 @@ when the *isAlive* property gets changed.  Modify the *isAlive* property declara
 Now when we set the Creature to be alive it will become visible, when we
 set it to be dead it will disappear.
 
-Fill the grid
-=============
+#Fill the grid
 
 In this step we are going to implement a method that fills our grid with
 Creature instances in *Grid.swift*.
@@ -203,8 +200,7 @@ gridArray[row][column]` .
 Run your game and try tapping on the Grid. You should see Creatures
 coming to life and dying where you tap.
 
-Set Up Your Main Scene
-======================
+#Set Up Your Main Scene
 
 In *MainScene.swift* we will:
 
@@ -247,8 +243,7 @@ methods in SpriteBuilder, the play and pause methods will automatically
 get called when we tap them! Note that you cannot run the game before
 finishing the next step.
 
-Evolve!
-=======
+#Evolve!
 
 Now for the tricky part. We need to implement the *evolveStep* method in
 *Grid.swift*.
@@ -332,8 +327,7 @@ beginning of your *updateCreatures* method by setting it to 0. Create an if stat
 
 Run the game again - you should be done!
 
-Just in case you get stuck
-==========================
+#Just in case you get stuck
 
 You can find the solution for this tutorial on
 [GitHub.](https://github.com/MakeSchool/GameOfLife-Swift)

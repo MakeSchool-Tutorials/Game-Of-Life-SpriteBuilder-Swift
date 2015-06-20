@@ -3,6 +3,18 @@ title: Create a New Project in SpriteBuilder
 slug: create-new-project-spritebuilder
 ---
 
+We are going to use a tool called SpriteBuilder to make this game. When
+we are done, the game will look like this:
+
+![image](./GOF-GridComplete.png)
+
+If you don't have SpriteBuilder yet, please [read this](https://www.makeschool.com/tutorials/getting-started-with-spritebuilder-and-swift/installing-spritebuilder)
+first. You should install both SpriteBuilder and Xcode.
+
+Open SpriteBuilder.
+
+#Creating a new project
+
 Let's get to work by creating a new SpriteBuilder project:
 
 ![image](./Spritebuilder_NewProject.png)
@@ -34,8 +46,7 @@ empty project should look like this:
 
 ![image](./Sprtebuilder_EmptyProject.png)
 
-Testing your setup
-==================
+#Testing your setup
 
 Let’s make sure everything was generated correctly. Click the publish
 button (on left side of the toolbar) in SpriteBuilder:
