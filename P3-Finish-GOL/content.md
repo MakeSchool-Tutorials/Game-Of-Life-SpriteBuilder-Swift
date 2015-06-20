@@ -126,9 +126,7 @@ events. Now let's implement *setupGrid* method after *onEnter*:
 
 	        	gridArray[row].append(creature)
 
-	        	// make creatures visible to test this method,
-	        	// set to false once we know we have filled the grid properly
-    			creature.isAlive = true;
+    			  creature.isAlive = false
 			}
 		}
 	}
@@ -136,18 +134,19 @@ events. Now let's implement *setupGrid* method after *onEnter*:
 This code requires some explanation. First we calculate the
 *cellWidth* and *cellHeight* by dividing the size of the grid by the
 amount of rows and columns. We iterate through two nested loops and create an array for
-each row of the grid and fill each row with Creatures. We calculate and assign a position for each creature using the *cellWidth*, *cellHeight*, *row* and *column* variables. As a test we set every creature to be alive
-so we can be sure this method works.
+each row of the grid and fill each row with Creatures. We calculate and assign a position for each creature using the *cellWidth*, *cellHeight*, *row* and *column* variables.
 
-After you've added this method run the game. It should look like this:
+#Test the grid
+
+Now, let's change the method to make sure everythign works. Since creatures are only visible when `isAlive` is `true`, change the last line of `setupGrid` from `creature.isAlive = false` to `creature.isAlive = true`. Now we should see all the creatures in our grid!
+
+Run the game to test things out. It should look like this:
 
 ![image](./GOF-GridComplete.png)
 
-Once you have confirmed that everything works out set creature.isAlive to false:
+If your game looks like the image above then everything worked! Set `creature.isAlive` to back to `false` since our test passed.
 
-	// make creatures visible to test this method,
-	// set to false once we know we have filled the grid properly
-	creature.isAlive = false;
+#Adding user interaction
 
 When the player taps a cell, it should access the Creature that lives on
 that cell and kill it if it's alive, or bring it to life if its dead!
