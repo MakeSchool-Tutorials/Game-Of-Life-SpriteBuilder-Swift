@@ -5,7 +5,6 @@ slug: what-game-of-life
 
 In this tutorial you are going to further familiarize yourself with Swift and SpriteBuilder by making a mobile version of Conway's Game of Life. If you've never heard of Conway's Game of Life, [Wikipedia](http://en.wikipedia.org/wiki/Conway%27s_Game_of_Life) has a great article. Nearly every programmer has written a version of this game at some point in their careers and wasted lots of time staring at cool shapes morphing. Consider this your initiation :p
 
-
 #TL;DR
 
 There is a grid of cells. A cell is either alive or dead. If a cell has less than two live neighbors, it dies. If it has more than three neighbors, it dies. If a live cell has exactly two or three neighbors, it stays alive and if a dead cell has exactly three neighbors, it comes to life.
@@ -306,4 +305,12 @@ In this tutorial, you will learn how to:
 
 We'll touch on many more topics but these are some of the most important ones.
 
-Let's get started!
+#The finished product
+
+We'll be making a mobile version of Conway's Game of Life. The final game will look like this:
+
+<!-- TODO: update with gif -->
+
+![](./GOL-GridComplete.png)
+
+Let's get started with a blank SpriteBuilder project!
