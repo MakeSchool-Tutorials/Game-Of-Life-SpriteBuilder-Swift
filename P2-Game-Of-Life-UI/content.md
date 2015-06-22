@@ -30,6 +30,8 @@ We won't create a tablet version of this game and the assets are provided in iPh
 >
 > ![image](./GOL-CenteredBackground.png)
 
+It's a good idea to design for multiple screen sizes from the start instead of going back to clean things up later.
+
 > [info]
 > You can test that the background is centered correctly by changing the resolution of the stage. That feature gives you a preview of how your game will look on different device types. Choose *Document > Resolution* to switch between *Phone Landscape* and *Phone Landscape (short)*:
 >
@@ -51,9 +53,8 @@ We will create the grid in a separate CCB file because it will be linked to a cu
 > Create a new CCB-File (File > New > File) of type Sprite and call it `Grid.ccb`:
 >
 > ![image](./GOL-Grid_Sprite.png)
-
-> [action]
->Select the `CCSprite` root node of `Grid.ccb` in the timeline and set the *Sprite Frame* to `grid.png` in the right panel. Also set the *anchor point* to `(1, 0.5)`:
+>
+> Select the `CCSprite` root node of `Grid.ccb` in the timeline and set the *Sprite Frame* to `grid.png` in the right panel. Also set the *anchor point* to `(1, 0.5)`:
 >
 > ![image](./GOL-Grid_Setup.png)
 
@@ -146,7 +147,7 @@ Now it's time to set up code connections before we switch to Xcode and you start
 
 Let's start with the labels - we need code connections in order to update the label values as the game state changes.
 
-> [action}
+> [action]
 > Select the second label, go to the Code Connections view (second button on the top of the right panel), and create a code connection called *populationLabel* - be sure to choose *Doc root var* from the dropdown box and leave the *Custom Class* field blank!
 >
 > ![image](./GOL-Label_Code_Connection.png)
