@@ -8,8 +8,8 @@ We'll be using SpriteBuilder to make this game. When we are done, the game will 
 ![image](./GOL-GridComplete.png)
 
 
-> [info]
-> If you are unfamiliar with or don't have SpriteBuilder and Xcode yet, please [read this](https://www.makeschool.com/tutorials/getting-started-with-spritebuilder-and-swift/installing-spritebuilder) first. You should install both SpriteBuilder and Xcode.
+<!-- > [info]
+> If you are unfamiliar with or don't have SpriteBuilder and Xcode yet, please [read this](https://www.makeschool.com/tutorials/getting-started-with-spritebuilder-and-swift/installing-spritebuilder) first. You should install both SpriteBuilder and Xcode. -->
 
 #Creating a new project
 
