@@ -344,9 +344,3 @@ The only thing that should be missing is the count of live Creatures. To make th
 >        }
 
 Run the game again - you should be done!
-
-#Solution
-
-The solution to this [tutorial is available on GitHub](https://github.com/MakeSchool/GameOfLife-Swift).
-
-![](./labtocat.png)

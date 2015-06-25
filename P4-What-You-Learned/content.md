@@ -16,3 +16,10 @@ slug: game-of-life-code
 * 	**Using touch information:** In order to add creatures to the grid, we needed to locate user touches in the grid. To do that, we used touch.locationInNode(self). This is the easiest way to find exactly where the touch has occurred.
 *  	**2-Dimensional Arrays:** 2D are arrays within arrays. They're very useful when storing representations of game objects; our grid is a perfect example a 2D array use case because it is visually 2-dimensional. 
 
+#Solution
+
+The solution to this [tutorial is available on GitHub](https://github.com/MakeSchool/GameOfLife-Swift).
+
+![](./labtocat.png)
+
+
