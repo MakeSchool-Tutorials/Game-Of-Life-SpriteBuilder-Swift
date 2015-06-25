@@ -24,15 +24,15 @@ We will use some object orientation to implement this game - therefore Creatures
 > [action]
 > Repeat the step above and create a class called *Creature* that also inherits from *CCSprite*.
 >
->When you've created the class, open *Creature.swift* and and replace the content of the file with this:
+> When you've created the class, open *Creature.swift* and and replace the content of the file with this:
 >
 >        class Creature: CCSprite {
->   
+>
 >            var isAlive = false
 >            var livingNeighborsCount = 0
->     
+>
 >            convenience override init() {
->     
+>
 >            }
 >        }
 
@@ -70,15 +70,15 @@ In this step we are going to implement a method that fills our grid with Creatur
 >  
 >        let GridRows = 8
 >        let GridColumns = 10
->    
+>
 >        class Grid: CCSprite {
 >            var totalAlive = 0
 >            var generation = 0
->     
+>
 >            var cellWidth: CGFloat = 0
 >            var cellHeight: CGFloat = 0
 >            var gridArray: [[Creature]]!
->     
+>
 >            // Add Grid methods below here
 >        }
 
@@ -91,9 +91,9 @@ Now let's set up the grid! When the Grid class gets loaded a method called *onEn
 >
 >        override func onEnter() {
 >            super.onEnter()
->    
+>
 >            setupGrid()
->    
+>
 >            userInteractionEnabled = true
 >        }
 
@@ -103,23 +103,23 @@ The *onEnter* method is also the right method to activate touch handling on the 
 > Now let's implement *setupGrid* method after *onEnter*:
 >
 >        func setupGrid() {
->       
+>
 >            cellWidth = contentSize.width / CGFloat(GridColumns)
 >            cellHeight = contentSize.height / CGFloat(GridRows)
->           
+>
 >            gridArray = []
->           
+>
 >            for row in 0..<GridRows {
 >                gridArray.append([])
->               
+>
 >                for column in 0..<GridColumns {
 >                    var creature = Creature()
 >                    creature.position = CGPoint(x: cellWidth * CGFloat(column),
 >                                                 y: cellHeight * CGFloat(row))
 >                    addChild(creature)
->                   
+>
 >                    gridArray[row].append(creature)
->                   
+>
 >                    creature.isAlive = false
 >                }
 >            }
@@ -148,9 +148,9 @@ The good news is that getting touches is very easy! Any class that is a CCNode o
 >
 >        override func touchBegan(touch: CCTouch!, withEvent event: CCTouchEvent!) {
 >           var touchLocation = touch.locationInNode(self)
->    
+>
 >           var creature = creatureForTouchPosition(touchLocation)
->    
+>
 >           creature.isAlive = !creature.isAlive
 >        }
 
@@ -162,7 +162,7 @@ Now let's create *creatureForTouchPosition*.
 > First, create an empty method:
 >
 >       func creatureForTouchPosition(touchPosition: CGPoint) -> Creature {
->    
+>
 >       }
 
 This method takes a parameter (*touchPosition*, which is a CGPoint) and returns a Creature, as indicated by the arrow: `-> Creature`
@@ -190,30 +190,30 @@ In *MainScene.swift* we will:
 > Replace the content of *MainScene.swift* with these lines:
 >
 >       import Foundation
->   
+>
 >       class MainScene: CCNode {
->   
+>
 >          weak var grid: Grid!
 >          weak var generationLabel: CCLabelTTF!
 >          weak var populationLabel: CCLabelTTF!
->   
+>
 >          var timer = CCTimer()
->   
+>
 >          func play() {
 >              schedule("step", interval: CCTime(0.5))
 >          }
->   
+>
 >          func pause() {
 >              unschedule("step")
 >          }
->   
+>
 >          func step() {
 >              grid.evolveStep()
->   
+>
 >              generationLabel.string = "\(grid.generation)"
 >              populationLabel.string = "\(grid.totalAlive)"
 >          }
->   
+>
 >       }
 
 Since we hooked up the play and pause buttons to the play and pause methods in SpriteBuilder, the play and pause methods will automatically get called when we tap them! Note that you cannot run the game before finishing the implementing a few more methods! Move on for more info :)
@@ -228,7 +228,7 @@ First, add an *evolveStep* method declaration to *Grid.swift*.  It takes no para
 > `evolveStep` should look like:
 >
 >       func evolveStep() {
->    
+>
 >       }
 
 According to the rules of the Game of Life, we need to count how many live neighbors every cell has every step. If it has 0-1 live neighbors the Creature on that cell dies or stays dead. If it has 2-3 live neighbors it stays alive. If it has 4 or more, it stays dead or dies. If it has exactly 3 neighbors and it is dead, it comes to life!
@@ -240,10 +240,10 @@ So we need to go through every Creature, count the number of live neighbors it h
 >
 >       //update each Creature's neighbor count
 >       countNeighbors()
->   
+>
 >       //update each Creature's state
 >       updateCreatures()
->   
+>
 >       //update the generation so the label's text will display the correct generation
 >       generation++
 
@@ -255,7 +255,7 @@ Declare *countNeighbors* in your Grid.swift. It takes no parameters and has no r
 > `countNeighbors` should look like:
 >
 >        func countNeighbors() {
->   
+>
 >        }
 
 Let's fill it in!
@@ -265,19 +265,19 @@ Let's fill it in!
 >
 >        for row in 0..<gridArray.count {
 >            for column in 0..<gridArray[row].count {
->     
+>
 >                var currentCreature = gridArray[row][column]
 >                currentCreature.livingNeighborsCount = 0
->     
+>
 >                for x in (row - 1)...(row + 1) {
 >                    for y in (column - 1)...(column + 1) {
->     
+>
 >                        var validIndex = isValidIndex(x: x, y: y)
->     
+>
 >                        if validIndex && !(x == row && y == column) {
->     
+>
 >                            var neighbor = gridArray[x][y]
->     
+>
 >                            if neighbor.isAlive {
 >                                currentCreature.livingNeighborsCount++
 >                            }
@@ -292,9 +292,14 @@ You'll notice that the above code refers to a method called `isValidIndex:(x: x,
 > [action]
 > Add `isIndexValid` to the `Grid` class:
 >
->        func isValidIndex(#x: Int, y: Int) -> Bool {
+>        func isValidIndex(#x: Int, #y: Int) -> Bool {
 >           return !(x < 0 || y < 0 || x >= GridRows || y >= GridColumns)
 >        }
+
+<!-- MAKE SCHOOL -->
+
+> [info]
+> The `isValidIndex` method above uses a neat shorthand for external parameter names. If you want your external parameter name to match your local name, you can you use # instead of explicitly writing it out. This means that `func isValidIndex(#x: Int, #y: Int) -> Bool` is the same as `func isValidIndex(x x: Int, y y: Int) -> Bool`
 
 Now it's your turn to write *updateCreatures*. Create it in *Grid.swift*. You will need to create a double-nested for-loop like we did in *countNeighbors* to access every creature in the Grid. Look over the code in *countNeighbors* if you need a refresher on how to do that.
 
@@ -335,7 +340,7 @@ The only thing that should be missing is the count of live Creatures. To make th
 >              } else if liveNeighbors <= 1 || liveNeighbors >= 4 {
 >                currentCreature.isAlive = false
 >              }
->   
+>
 >              if currentCreature.isAlive {
 >                totalAlive++
 >              }
