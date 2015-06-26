@@ -1,6 +1,6 @@
 ---
 title: 'What You Learned!'
-slug: game-of-life-code
+slug: game-of-life-summary
 ---  
 
 #Designing for Compatibility
