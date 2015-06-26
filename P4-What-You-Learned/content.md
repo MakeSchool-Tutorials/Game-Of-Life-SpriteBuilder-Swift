@@ -1,5 +1,5 @@
 ---
-title: What You Learned!
+title: 'What You Learned!'
 slug: game-of-life-code
 ---  
 
