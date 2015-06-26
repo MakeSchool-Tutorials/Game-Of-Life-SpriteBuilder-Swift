@@ -20,6 +20,6 @@ slug: game-of-life-summary
 
 The solution to this [tutorial is available on GitHub](https://github.com/MakeSchool/GameOfLife-Swift).
 
-![](./labtocat.png)
+![](labtocat.png)
 
 
