@@ -34,3 +34,7 @@ We'll be making a mobile version of Conway's Game of Life. The final game will l
 ![](./GOL-GridComplete.png)
 
 Let's get started with a blank SpriteBuilder project!
+
+#Feedback
+
+If you have feedback on this tutorial or find any mistakes, please open issues on the [GitHub Repository](https://github.com/MakeSchool-Tutorials/Game-Of-Life-SpriteBuilder-Swift).
