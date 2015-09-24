@@ -298,9 +298,6 @@ You'll notice that the above code refers to a method called `isValidIndex:(x: x,
 
 <!-- MAKE SCHOOL -->
 
-> [info]
-> The `isValidIndex` method above uses a neat shorthand for external parameter names. If you want your external parameter name to match your local name, you can you use # instead of explicitly writing it out. This means that `func isValidIndex(#x: Int, y: Int) -> Bool` is the same as `func isValidIndex(x x: Int, y: Int) -> Bool`
-
 Now it's your turn to write *updateCreatures*. Create it in *Grid.swift*. You will need to create a double-nested for-loop like we did in *countNeighbors* to access every creature in the Grid. Look over the code in *countNeighbors* if you need a refresher on how to do that.
 
 Next you need to create an `if/else-if statement`. In the `if statement`, check if the Creature's *livingNeighbors* property is set to 3. If it is, that means it has 3 live neighbors so you want to set its *isAlive* property to true. In the `else-if` you want to check if the Creature has less than or equal to 1 living neighbors or more than or equal to 4. If either are true, set the Creature's *isAlive* property to false.
