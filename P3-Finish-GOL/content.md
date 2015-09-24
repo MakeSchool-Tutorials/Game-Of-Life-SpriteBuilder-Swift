@@ -113,7 +113,7 @@ The *onEnter* method is also the right method to activate touch handling on the 
 >                gridArray.append([])
 >
 >                for column in 0..<GridColumns {
->                    var creature = Creature()
+>                    let creature = Creature()
 >                    creature.position = CGPoint(x: cellWidth * CGFloat(column),
 >                                                 y: cellHeight * CGFloat(row))
 >                    addChild(creature)
@@ -147,9 +147,9 @@ The good news is that getting touches is very easy! Any class that is a CCNode o
 > Add the following method to your Grid.swift:
 >
 >        override func touchBegan(touch: CCTouch!, withEvent event: CCTouchEvent!) {
->           var touchLocation = touch.locationInNode(self)
+>           let touchLocation = touch.locationInNode(self)
 >
->           var creature = creatureForTouchPosition(touchLocation)
+>           let creature = creatureForTouchPosition(touchLocation)
 >
 >           creature.isAlive = !creature.isAlive
 >        }
@@ -172,8 +172,8 @@ Divide the y coordinate of the touch (accessed as *touchPosition.y*) by the cell
 > [solution]
 > The body of `creatureForTouchPosition` should look like this:
 >
->        var row = Int(touchPosition.y / cellHeight)
->        var column = Int(touchPosition.x / cellWidth)
+>        let row = Int(touchPosition.y / cellHeight)
+>        let column = Int(touchPosition.x / cellWidth)
 >        return gridArray[row][column]
 
 Run your game and try tapping on the Grid. You should see Creatures coming to life and dying where you tap.
@@ -266,17 +266,17 @@ Let's fill it in!
 >        for row in 0..<gridArray.count {
 >            for column in 0..<gridArray[row].count {
 >
->                var currentCreature = gridArray[row][column]
+>                let currentCreature = gridArray[row][column]
 >                currentCreature.livingNeighborsCount = 0
 >
 >                for x in (row - 1)...(row + 1) {
 >                    for y in (column - 1)...(column + 1) {
 >
->                        var validIndex = isValidIndex(x: x, y: y)
+>                        let validIndex = isValidIndex(x: x, y: y)
 >
 >                        if validIndex && !(x == row && y == column) {
 >
->                            var neighbor = gridArray[x][y]
+>                            let neighbor = gridArray[x][y]
 >
 >                            if neighbor.isAlive {
 >                                currentCreature.livingNeighborsCount++
@@ -311,7 +311,7 @@ Next you need to create an `if/else-if statement`. In the `if statement`, check 
 >        func updateCreatures() {
 >          for row in 0..<gridArray.count {
 >            for column in 0..<gridArray[row].count {
->              var currentCreature = gridArray[row][column]
+>              let currentCreature = gridArray[row][column]
 >              let liveNeighbors = currentCreature.livingNeighborsCount
 >              if liveNeighbors == 3 {
 >                currentCreature.isAlive = true
@@ -333,7 +333,7 @@ The only thing that should be missing is the count of live Creatures. To make th
 >          totalAlive = 0
 >          for row in 0..<gridArray.count {
 >            for column in 0..<gridArray[row].count {
->              var currentCreature = gridArray[row][column]
+>              let currentCreature = gridArray[row][column]
 >              let liveNeighbors = currentCreature.livingNeighborsCount
 >              if liveNeighbors == 3 {
 >                currentCreature.isAlive = true
