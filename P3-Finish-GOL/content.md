@@ -292,14 +292,14 @@ You'll notice that the above code refers to a method called `isValidIndex:(x: x,
 > [action]
 > Add `isIndexValid` to the `Grid` class:
 >
->        func isValidIndex(#x: Int, #y: Int) -> Bool {
+>        func isValidIndex(x x: Int, y: Int) -> Bool {
 >           return !(x < 0 || y < 0 || x >= GridRows || y >= GridColumns)
 >        }
 
 <!-- MAKE SCHOOL -->
 
 > [info]
-> The `isValidIndex` method above uses a neat shorthand for external parameter names. If you want your external parameter name to match your local name, you can you use # instead of explicitly writing it out. This means that `func isValidIndex(#x: Int, #y: Int) -> Bool` is the same as `func isValidIndex(x x: Int, y y: Int) -> Bool`
+> The `isValidIndex` method above uses a neat shorthand for external parameter names. If you want your external parameter name to match your local name, you can you use # instead of explicitly writing it out. This means that `func isValidIndex(#x: Int, y: Int) -> Bool` is the same as `func isValidIndex(x x: Int, y: Int) -> Bool`
 
 Now it's your turn to write *updateCreatures*. Create it in *Grid.swift*. You will need to create a double-nested for-loop like we did in *countNeighbors* to access every creature in the Grid. Look over the code in *countNeighbors* if you need a refresher on how to do that.
 
