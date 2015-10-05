@@ -8,7 +8,7 @@ Time to code! In this step we are going to hook up the UI we've created in Sprit
 > [action]
 > Open your Xcode project from SpriteBuilder by going to `File > Open Project in Xcode`.
 
-#Create a Grid class
+## Create a Grid class
 
 First of all let's create the *Grid* class which we just set as a custom class in SpriteBuilder.
 
@@ -17,7 +17,7 @@ First of all let's create the *Grid* class which we just set as a custom class i
 >
 > ![image](./GOL-Grid-CCSprite-Swift.png)
 
-#Create a Creature class
+## Create a Creature class
 
 We will use some object orientation to implement this game - therefore Creatures will get their own class, too.
 
@@ -61,7 +61,7 @@ We are going to implement a second method. Whenever a creature is not alive, we 
 
 Now when we set the Creature to be alive it will become visible and when we set it to be dead it will disappear.
 
-#Fill the grid
+## Fill the grid
 
 In this step we are going to implement a method that fills our grid with Creature instances in *Grid.swift*.
 
@@ -127,7 +127,7 @@ The *onEnter* method is also the right method to activate touch handling on the 
 
 This code requires some explanation. First we calculate the *cellWidth* and *cellHeight* by dividing the size of the grid by the amount of rows and columns. We iterate through two nested loops and create an array for each row of the grid and fill each row with Creatures. We calculate and assign a position for each creature using the *cellWidth*, *cellHeight*, *row* and *column* variables.
 
-#Test the grid
+## Test the grid
 
 Now, let's change the method to make sure everything works. Since creatures are only visible when `isAlive` is `true`, change the last line of `setupGrid` from `creature.isAlive = false` to `creature.isAlive = true`. Now we should see all the creatures in our grid!
 
@@ -137,7 +137,7 @@ Run the game to test things out. It should look like this:
 
 If your game looks like the image above then everything worked! Set `creature.isAlive` to back to `false` since our test passed.
 
-#Adding user interaction
+## Adding user interaction
 
 When the player taps a cell, it should access the Creature that lives on that cell and kill it if it's alive, or bring it to life if its dead!
 
@@ -178,7 +178,7 @@ Divide the y coordinate of the touch (accessed as *touchPosition.y*) by the cell
 
 Run your game and try tapping on the Grid. You should see Creatures coming to life and dying where you tap.
 
-#Set Up Your Main Scene
+## Set Up Your Main Scene
 
 In *MainScene.swift* we will:
 
@@ -218,7 +218,7 @@ In *MainScene.swift* we will:
 
 Since we hooked up the play and pause buttons to the play and pause methods in SpriteBuilder, the play and pause methods will automatically get called when we tap them! Note that you cannot run the game before finishing the implementing a few more methods! Move on for more info :)
 
-#Evolve!
+## Evolve!
 
 Now for the tricky part. We need to implement the *evolveStep* method in *Grid.swift*.
 
