@@ -11,7 +11,7 @@ We'll be using SpriteBuilder to make this game. When we are done, the game will 
 <!-- > [info]
 > If you are unfamiliar with or don't have SpriteBuilder and Xcode yet, please [read this](https://www.makeschool.com/tutorials/getting-started-with-spritebuilder-and-swift/installing-spritebuilder) first. You should install both SpriteBuilder and Xcode. -->
 
-#Creating a new project
+## Creating a new project
 
 > [action]
 > Open SpriteBuilder.
@@ -42,7 +42,7 @@ The default SpriteBuilder project comes with one scene called `MainScene.ccb`. Y
 
 ![image](./Sprtebuilder_EmptyProject.png)
 
-#Testing your setup
+## Testing your setup
 
 Let’s make sure everything was generated correctly.
 
