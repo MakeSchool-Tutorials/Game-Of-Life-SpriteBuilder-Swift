@@ -7,7 +7,7 @@ In this first step we will set up the user interface. Once we are done with this
 
 ![image](./GOL_SpriteBuilder_UI.png)
 
-#Getting started
+## Getting started
 
 > [action]
 > Get started by downloading our [art pack](https://s3.amazonaws.com/mgwu-misc/GameOfLife+SpriteBuilder+Tutorial/GameOfLifeAssets.zip) for this game.
@@ -23,7 +23,7 @@ We won't create a tablet version of this game and the assets are provided in iPh
 >
 > Now open `MainScene.ccb` and highlight `CCNodeGradient` in the timeline. Hit the `delete` key. Do the same for `CCLabelTTF` - you should end up with a black screen. Note that you cannot delete the root CCNode.
 
-#Add a background image
+## Add a background image
 
 > [action]
 > Drag `background.png` to the stage of `MainScene.ccb`. We want to center the background so set the *anchor point* to `(0.5, 0.5)` and choose the position to be expressed *in % of parent container* - and choose `50%` for *both X and Y position*:
@@ -45,7 +45,7 @@ It's a good idea to design for multiple screen sizes from the start instead of g
 
 Your background image should stay centered in both resolution modes.
 
-#Creating a grid
+## Creating a grid
 
 We will create the grid in a separate CCB file because it will be linked to a custom class later on.
 
@@ -63,7 +63,7 @@ We set the anchor point to (1, 0.5) because we want to position the grid from th
 > [info]
 > Make sure to save (cmd+s) or your grid will not display correctly later on!
 
-#Add the grid to the MainScene
+## Add the grid to the MainScene
 
 > [action]
 > Now open *MainScene.ccb* again by double clicking on it and drag *Grid.ccb* onto the stage.
@@ -81,7 +81,7 @@ This will add the grid as Sub-CCB-File to the MainScene.
 
 This means the grid will be positioned 10 points from the right edge and it will be vertically centered. You can again test by switching between the different resolutions.
 
-#Add a container node for the left panel
+## Add a container node for the left panel
 
 As you can see on the screenshot at the beginning of this tutorial we will have a couple of UI elements on the left side of the screen. We want all of them to be centered. To achieve this we are going to use a little layout trick where we use an invisible *CCNode* and position other nodes inside of it.
 
@@ -97,7 +97,7 @@ This means the Node will have the size of the parent node **minus** the value yo
 
 Before you move on, double check that your size settings are exactly the same as shown in the screenshot. When you test with different resolutions you should see how the left node resizes, always taking all the space that is not used by the grid. Scroll up to the background image step if you forgot how to change devices resolutions!
 
-#Layout Box
+## Layout Box
 
 We have a couple different elements that we need to add to the left panel and they all need to be placed one below the other. Instead of doing this manually we can use a nice Cocos2d component called *CCLayoutBox*.
 
@@ -106,7 +106,7 @@ We have a couple different elements that we need to add to the left panel and th
 >
 >![image](./GOL-BoxLayout.png)
 
-#Adding buttons
+## Adding buttons
 
 Great! Now it is time to set up your game's UI!
 
@@ -130,7 +130,7 @@ Now set the correct images for the buttons.
 >
 > ![image](./GOL-Buttons.png)
 
-#Adding labels
+## Adding labels
 
 In this step, add four labels as children of the balloon. These will form our scoreboard.
 
@@ -141,7 +141,7 @@ In this step, add four labels as children of the balloon. These will form our sc
 
 Great! Now the UI is set and autoresizes nicely for 3.5-inch and 4-inch phones.
 
-#Set up code connections
+## Set up code connections
 
 Now it's time to set up code connections before we switch to Xcode and you start implementing the actual game. We want to tell SpriteBuilder how this UI you've created will interact with the classes and methods we will implement in code.
 
