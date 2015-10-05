@@ -1,5 +1,5 @@
 ---
-title: What's the Game of Life?
+title: What's the Game of Life (in Swift)?
 slug: what-game-of-life
 ---
 
@@ -31,7 +31,7 @@ We'll be making a mobile version of Conway's Game of Life. The final game will l
 
 <!-- TODO: update with gif -->
 
-![](./GOL-GridComplete.png)
+![Complete grid](./GOL-GridComplete.png)
 
 Let's get started with a blank SpriteBuilder project!
 
